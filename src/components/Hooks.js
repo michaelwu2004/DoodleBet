@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 
 export function useOnDraw(onDraw) {
 
@@ -6,27 +6,8 @@ export function useOnDraw(onDraw) {
 
   const isDrawingRef = useRef(false);
 
-  const mouseMoveListenerRef = useRef(null);
-  const mouseDownListenerRef = useRef(null);
-  const mouseUpListenerRef = useRef(null);
-
-  const prevPointRef = useRef(null);
-
-  useEffect(() => {
-    //Clean up function
-    return () => {
-      if (mouseMoveListenerRef.current) {
-        window.removeEventListener("mousemove", mouseMoveListenerRef.current);
-      }
-      if (mouseUpListenerRef.current) {
-        window.removeEventListener("mouseup", mouseUpListenerRef.current);
-      }
-    }
-  }, [])
-
   function setCanvasRef(ref) {
     if (!ref) return;
-    if (canvasRef.current) canvasRef.current.removeEventListener("mousedown", mouseDownListenerRef.current);
     canvasRef.current = ref;
     initMouseMoveListener();
     initMouseDownListener();
@@ -38,31 +19,29 @@ export function useOnDraw(onDraw) {
       if (isDrawingRef.current) {
         const point = pointRelativeToCanvas(e.clientX, e.clientY);
         const context = canvasRef.current.getContext('2d');
-        if (onDraw) onDraw(context, point, prevPointRef.current);
-        prevPointRef.current = point;
+        if (onDraw) onDraw(context, point);
         console.log(point);
       }
     }
-    mouseMoveListener.current = mouseMoveListener;
     window.addEventListener("mousemove", mouseMoveListener);
   }
 
   function initMouseDownListener() {
-    if (!canvasRef.current) return;
-    const listener = () => {
-      isDrawingRef.current = true;
+    if (canvasRef.current) {
+      const listener = () => {
+        isDrawingRef.current = true;
+      }
+      canvasRef.current.addEventListener("mousedown", listener)
     }
-    mouseDownListenerRef.current = listener;
-    canvasRef.current.addEventListener("mousedown", listener)
   }
 
   function initMouseUpListener() {
-    const listener = () => {
-      isDrawingRef.current = false;
-      prevPointRef.current = null;
+    if (canvasRef.current) {
+      const listener = () => {
+        isDrawingRef.current = false;
+      }
+      canvasRef.current.addEventListener("mouseup", listener)
     }
-    mouseUpListenerRef.current = listener
-    window.addEventListener("mouseup", listener);
   }
 
   function pointRelativeToCanvas(clientX, clientY) {
