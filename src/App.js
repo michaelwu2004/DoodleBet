@@ -1,12 +1,11 @@
 import Canvas from "./components/Canvas";
+import Home from "./components/Home";
+import './index.css'
 
 function App() {
   return (
-    <div className="flex items-center justify-center h-screen w-screen">
-      <Canvas
-        width={700}
-        height={500}
-      />
+    <div>
+      <h1 className="text-7xl text-center text-blue-400"> Hello world </h1>
     </div>
   );
 }

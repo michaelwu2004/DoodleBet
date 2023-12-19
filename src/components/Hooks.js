@@ -59,6 +59,7 @@ export function useOnDraw(onDraw) {
   function initMouseUpListener() {
     const listener = () => {
       isDrawingRef.current = false;
+      prevPointRef.current = null;
     }
     mouseUpListenerRef.current = listener;
     window.addEventListener("mouseup", listener);
