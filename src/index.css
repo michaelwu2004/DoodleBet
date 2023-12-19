@@ -1,3 +1,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.dutch-white {
+  background-color: #F9E8C4;
+}
+
+.lapis-laz {
+  background-color: #31698E;
+}
+
+.honeydew {
+  background-color: #D7E2D5;
+}
+
+.indigo-dye {
+  background-color: #254666;
+}
+
+.ash-gray {
+  background-color: #B1C1BD;
+}
+
+.key-button {
+  transition: background-color 0.3s ease;
+}
+
+.key-button:hover {
+  background-color: darkgray;
+}
+
+.pressed {
+  background-color: rgb(70, 64, 64);
+}
