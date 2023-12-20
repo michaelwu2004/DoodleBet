@@ -1,7 +1,13 @@
+import { useEffect } from 'react';
 import { useOnDraw } from './Hooks'
 const Canvas = ({ width, height }) => {
 
   const setCanvasRef = useOnDraw(onDraw);
+
+  useEffect(() => {
+
+
+  }, [setCanvasRef])
 
   function onDraw(c, pt, prevPt) {
     drawLine(prevPt, pt, c, '#000000', 5);
@@ -22,12 +28,16 @@ const Canvas = ({ width, height }) => {
   }
 
   return (
-    <canvas
-      width={width}
-      height={height}
-      style={canvasBorder}
-      ref={setCanvasRef}
-    />
+
+    <div className='flex flex-row m-10 space-x-10'>
+      <canvas
+        width={width}
+        height={height}
+        style={canvasBorder}
+        ref={setCanvasRef}
+      />
+      <button className='indigo-dye w-12 h-12 key-button'> HI </button>
+    </div>
   )
 }
 

@@ -27,7 +27,7 @@
 }
 
 .key-button:hover {
-  background-color: darkgray;
+  background-color: rgb(70, 64, 64);
 }
 
 .pressed {
