@@ -1,13 +1,38 @@
-import { useEffect } from 'react';
+import { useEffect, useContext, useState } from 'react';
+import { LetterContext } from '../helper/LetterContext';
 import { useOnDraw } from './Hooks'
-const Canvas = ({ width, height }) => {
+const Canvas = ({ character, width, height }) => {
+  const [dataUrl, setDataUrl] = useState("");
 
-  const setCanvasRef = useOnDraw(onDraw);
+  const { characterMap, setCharacterMap } = useContext(LetterContext);
+  const { setCanvasRef, canvasRef } = useOnDraw(onDraw);
+
+
+
+  const updateCharacter = (letter, newValue) => {
+    setCharacterMap((prevMap) => ({
+      ...prevMap,
+      [letter]: newValue,
+    }));
+  };
+
+  const handleButtonClick = () => {
+    console.log("button clicked");
+    if (canvasRef.current) {
+      console.log("reference to canvas established")
+      const canvas = canvasRef.current;
+      const newDataUrl = canvas.toDataURL();
+      setDataUrl(newDataUrl)
+      console.log("url", newDataUrl);
+      updateCharacter('A', newDataUrl);
+    }
+
+
+  };
 
   useEffect(() => {
-
-
-  }, [setCanvasRef])
+    console.log(characterMap);
+  }, [characterMap])
 
   function onDraw(c, pt, prevPt) {
     drawLine(prevPt, pt, c, '#000000', 5);
@@ -29,14 +54,17 @@ const Canvas = ({ width, height }) => {
 
   return (
 
-    <div className='flex flex-row m-10 space-x-10'>
-      <canvas
-        width={width}
-        height={height}
-        style={canvasBorder}
-        ref={setCanvasRef}
-      />
-      <button className='indigo-dye w-12 h-12 key-button'> HI </button>
+    <div className='flex flex-col'>
+      <div className='flex flex-row m-10 space-x-10'>
+        <canvas
+          width={width}
+          height={height}
+          style={canvasBorder}
+          ref={setCanvasRef}
+        />
+        <button className='indigo-dye w-12 h-12 key-button' onClick={handleButtonClick}> HI </button>
+      </div>
+      <img src={dataUrl} width={100} height={100} />
     </div>
   )
 }

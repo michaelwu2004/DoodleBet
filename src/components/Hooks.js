@@ -76,5 +76,5 @@ export function useOnDraw(onDraw) {
     return null
   }
 
-  return setCanvasRef;
+  return { setCanvasRef, canvasRef };
 }
