@@ -7,8 +7,6 @@ const Canvas = ({ character, width, height }) => {
   const { characterMap, setCharacterMap } = useContext(LetterContext);
   const { setCanvasRef, canvasRef } = useOnDraw(onDraw);
 
-
-
   const updateCharacter = (letter, newValue) => {
     setCharacterMap((prevMap) => ({
       ...prevMap,
@@ -17,17 +15,12 @@ const Canvas = ({ character, width, height }) => {
   };
 
   const handleButtonClick = () => {
-    console.log("button clicked");
     if (canvasRef.current) {
-      console.log("reference to canvas established")
       const canvas = canvasRef.current;
       const newDataUrl = canvas.toDataURL();
       setDataUrl(newDataUrl)
-      console.log("url", newDataUrl);
-      updateCharacter('A', newDataUrl);
+      updateCharacter(character, newDataUrl);
     }
-
-
   };
 
   useEffect(() => {

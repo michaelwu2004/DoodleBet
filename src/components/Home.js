@@ -1,58 +1,24 @@
-import React, { useEffect, useState, useContext } from 'react';
-import { LetterContext } from '../helper/LetterContext';
+import React from 'react';
 import KeyBoard from './Keyboard';
-import Canvas from "./Canvas";
-
+import CharacterRow from './CharacterRow';
 
 function Home() {
-
   return (
-    <div className=''>
-      <h1 className="text-7xl text-center text-blue-400"> Home </h1>
-      <Canvas width={200} height={200} />
-      <CharacterRow />
+    <div className='flex flex-col items-center justify-center'>
+      <div className='text-color font-bold'> Pseudo-english language</div>
+      <div className='flex flex-col w-11/12 h-64 bone rounded'>
+        <CharacterRow isCustom={true} />
+      </div>
+      <div className='h-8' />
+      <div className='text-color font-bold'> Translation </div>
+      <div className='flex flex-col w-11/12 h-64 bone rounded'>
+        <CharacterRow isCustom={false} />
+      </div>
+      <KeyBoard />
     </div>
   )
 }
 
-function CharacterRow() {
-  const [imageSequence, setImageSequence] = useState([]);
-  const { characterMap, setCharacterMap } = useContext(LetterContext);
-
-  useEffect(() => {
-    console.log("characterRow")
-    const handleKeyPress = (e) => {
-      console.log("Key pressed")
-      const key = e.key.toUpperCase();
-      //console.log(key);
-      const imageUrl = characterMap[key];
-      console.log(characterMap);
-      console.log("url", imageUrl);
-      if (imageUrl) {
-        console.log("WE GOT A URL FOR THIS KEY")
-        setImageSequence((prev) => [...prev, imageUrl]);
-      }
-    }
-
-    window.addEventListener('keydown', handleKeyPress);
-
-    return () => {
-      window.removeEventListener('keydown', handleKeyPress);
-    }
-
-  }, [characterMap, imageSequence]);
-
-  const renderedImages = imageSequence.map((imageUrl, index) => (
-    <img key={index} src={imageUrl} alt={`Image ${index}`} width={50} height={50} />
-  ));
-
-  return (
-    <div className='flex flex-row w-screen'>
-      {renderedImages}
-    </div>
-  )
-}
-
-
+//<h1 className="text-7xl text-center text-blue-400"> Home </h1>
 
 export default Home

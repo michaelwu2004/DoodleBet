@@ -10,13 +10,13 @@ function App() {
     const letter = String.fromCharCode(i);
     initMap[letter] = '';
   }
-  //console.log(initMap);
+
   const [characterMap, setCharacterMap] = useState(initMap);
-  //console.log(characterMap);
+  const [pressedKey, setPressedKey] = useState('');
 
   return (
     <div className="root h-screen w-screen">
-      <LetterContext.Provider value={{ characterMap, setCharacterMap }}>
+      <LetterContext.Provider value={{ characterMap, setCharacterMap, pressedKey, setPressedKey }}>
         <Home />
       </LetterContext.Provider>
 

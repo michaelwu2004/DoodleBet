@@ -22,6 +22,18 @@
   background-color: #B1C1BD;
 }
 
+.cosmic-latte {
+  background-color: #FBF6E3;
+}
+
+.battleship-gray {
+  background-color: #90928F;
+}
+
+.bone {
+  background-color: #D7D5C1;
+}
+
 .key-button {
   transition: background-color 0.3s ease;
 }
@@ -32,4 +44,27 @@
 
 .pressed {
   background-color: rgb(70, 64, 64);
+}
+
+.text-color {
+  color: #254666;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 25px;
+}
+
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
 }
