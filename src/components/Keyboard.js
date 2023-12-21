@@ -10,10 +10,10 @@ const KeyBoard = () => {
     <div>
 
       <div>
-        {keyboard.map((row) => (
-          <div className='flex flex-row space-x-4 m-2 justify-center'>
-            {row.map((key) => (
-              <Key character={key} />
+        {keyboard.map((row, idx) => (
+          <div key={idx} className='flex flex-row space-x-4 m-2 justify-center'>
+            {row.map((key, kidx) => (
+              <Key key={kidx} character={key} />
             ))}
           </div>
         ))}

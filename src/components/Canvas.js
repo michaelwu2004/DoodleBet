@@ -14,12 +14,22 @@ const Canvas = ({ character, width, height }) => {
     }));
   };
 
-  const handleButtonClick = () => {
+  const handleSaveButtonClick = () => {
     if (canvasRef.current) {
       const canvas = canvasRef.current;
       const newDataUrl = canvas.toDataURL();
       setDataUrl(newDataUrl)
       updateCharacter(character, newDataUrl);
+    }
+  };
+
+  const handleClearButtonClick = () => {
+    if (canvasRef.current) {
+      const canvas = canvasRef.current;
+      const context = canvas.getContext('2d');
+      context.clearRect(0, 0, canvas.width, canvas.height);
+      setDataUrl(""); // Clear the dataUrl as well if needed
+      updateCharacter(character, ""); // Clear the character image data
     }
   };
 
@@ -48,16 +58,21 @@ const Canvas = ({ character, width, height }) => {
   return (
 
     <div className='flex flex-col'>
-      <div className='flex flex-row m-10 space-x-10'>
+      <div className='flex flex-col pt-3 space-y-5'>
         <canvas
           width={width}
           height={height}
           style={canvasBorder}
           ref={setCanvasRef}
         />
-        <button className='indigo-dye w-12 h-12 key-button' onClick={handleButtonClick}> HI </button>
+        <div className='flex flex-row space-x-1'>
+          <button className='indigo-dye w-full h-fit p-3 key-button rounded' onClick={handleSaveButtonClick}> Save </button>
+          <button className='indigo-dye w-full h-fit p-3 key-button rounded' onClick={handleClearButtonClick}> Clear </button>
+        </div>
+
       </div>
-      <img src={dataUrl} width={100} height={100} />
+      <div className='font-bold pt-2'> Preview: </div>
+      {characterMap[character] === "" ? <div> nuthing </div> : <img src={dataUrl} width={50} height={50} />}
     </div>
   )
 }

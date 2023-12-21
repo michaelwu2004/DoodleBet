@@ -67,4 +67,37 @@
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.fade-in {
+  opacity: 1;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+.caret {
+  background-color: black;
+  animation: blink-caret 1.5s infinite;
+  visibility: visible;
+}
+
+@keyframes blink-caret {
+  50% {
+    opacity: 0;
+  }
+}
+
+.word-box {}
+
+.word-box::-webkit-scrollbar {
+  display: none;
+}
+
+.word-box {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

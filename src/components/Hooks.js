@@ -67,10 +67,18 @@ export function useOnDraw(onDraw) {
 
   function pointRelativeToCanvas(clientX, clientY) {
     if (canvasRef.current) {
-      const bounds = canvasRef.current.getBoundingClientRect()
+      const bounds = canvasRef.current.getBoundingClientRect();
+      const canvasX = clientX - bounds.left;
+      const canvasY = clientY - bounds.top;
+
+
+      const canvasWidth = canvasRef.current.width;
+      const canvasHeight = canvasRef.current.height;
+
+      // Adjusting position of x and y depending on canvas size
       return {
-        x: clientX - bounds.left,
-        y: clientY - bounds.top
+        x: (canvasX / bounds.width) * canvasWidth,
+        y: (canvasY / bounds.height) * canvasHeight
       }
     }
     return null
