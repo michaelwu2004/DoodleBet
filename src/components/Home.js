@@ -1,10 +1,12 @@
 import React from 'react';
 import KeyBoard from './Keyboard';
 import CharacterRow from './CharacterRow';
+import NavBar from './NavBar';
 
 function Home() {
   return (
     <div className='flex flex-col items-center justify-center'>
+      <NavBar />
       <div className='text-color font-bold'> Pseudo-english language</div>
       <div className='flex flex-col w-11/12 h-64 bone rounded'>
         <CharacterRow isCustom={true} />

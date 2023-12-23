@@ -1,21 +1,18 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Canvas from "./Canvas";
 
 function CanvasMenu({ character, onClose }) {
 
   const [isVisible, setIsVisible] = useState(true);
 
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setIsVisible(false);
-    }, 5000);
-
-    return () => clearTimeout(timeout);
-  }, []);
-
   const handleClose = () => {
+    console.log("closing");
     setIsVisible(false);
-    onClose();
+
+    // allow time for the fade-out animation to occur
+    setTimeout(() => {
+      onClose();
+    }, 750);
   };
 
   return (
