@@ -4,6 +4,8 @@ import { LetterContext } from '../helper/LetterContext';
 function CharacterRow({ isCustom }) {
   const [imageSequence, setImageSequence] = useState([]);
   const [characterSequence, setCharacterSequence] = useState([]);
+  const [displayWarning, setDisplayWarning] = useState(false);
+  const [displayFadeIn, setDisplayFadeIn] = useState(true);
   const { characterMap, setCharacterMap } = useContext(LetterContext);
   const caretRef = useRef(null);
 
@@ -23,6 +25,15 @@ function CharacterRow({ isCustom }) {
           setImageSequence((prev) => [...prev, imageUrl]);
           setCharacterSequence((prev) => [...prev, key]);
           caretRef.current.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        } else {
+          setDisplayWarning(true);
+          setTimeout(() => {
+
+          }, 750)
+          setDisplayFadeIn(false);
+          setTimeout(() => {
+            setDisplayWarning(false);
+          }, 750)
         }
       }
 
@@ -45,9 +56,12 @@ function CharacterRow({ isCustom }) {
   ))
 
   return (
-    <div className='word-box flex flex-row flex-wrap p-4 overflow-auto whitespace-nowrap'>
-      {isCustom ? renderedImages : renderedCharacters}
-      <span ref={caretRef} className='caret rounded'>&nbsp;</span>
+    <div>
+      {displayWarning ? <div className={`text-red-500 font-bold h-screen w-screen warning ${displayFadeIn ? 'fade-in' : 'fade-out'}`}> Doodle for this character has not been set!</div> : null}
+      <div className='word-box flex flex-row flex-wrap p-4 overflow-auto whitespace-nowrap'>
+        {isCustom ? renderedImages : renderedCharacters}
+        <span ref={caretRef} className='caret rounded'>&nbsp;</span>
+      </div>
     </div>
   )
 }

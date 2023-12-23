@@ -1,16 +1,14 @@
 import React, { useEffect, useState, useContext } from 'react'
 import { LetterContext } from '../helper/LetterContext';
 import CanvasMenu from './CanvasMenu';
-import PopUp from './PopUp';
 
 function Key({ character }) {
   const { pressedKey, setPressedKey } = useContext(LetterContext);
   const [openCanvasMenu, setOpenCanvasMenu] = useState(false);
 
   const handleKeyDown = (e) => {
-    console.log("Listener for " + character, "got a pressdown event!")
+
     setPressedKey(e.key.toUpperCase());
-    console.log(e.key.toUpperCase());
   }
 
   const handleKeyUp = (e) => {

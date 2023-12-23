@@ -21,6 +21,4 @@ function Home() {
   )
 }
 
-//<h1 className="text-7xl text-center text-blue-400"> Home </h1>
-
 export default Home

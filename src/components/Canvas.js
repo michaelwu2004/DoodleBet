@@ -7,6 +7,8 @@ const Canvas = ({ character, width, height }) => {
   const { characterMap, setCharacterMap } = useContext(LetterContext);
   const { setCanvasRef, canvasRef } = useOnDraw(onDraw);
 
+  console.log(characterMap[character])
+
   const updateCharacter = (letter, newValue) => {
     setCharacterMap((prevMap) => ({
       ...prevMap,
@@ -66,13 +68,11 @@ const Canvas = ({ character, width, height }) => {
           ref={setCanvasRef}
         />
         <div className='flex flex-row space-x-1'>
-          <button className='indigo-dye w-full h-fit p-3 key-button rounded' onClick={handleSaveButtonClick}> Save </button>
-          <button className='indigo-dye w-full h-fit p-3 key-button rounded' onClick={handleClearButtonClick}> Clear </button>
+          <button className='ash-gray text-color font-bold w-full h-fit p-3 key-button rounded' onClick={handleSaveButtonClick}> Save </button>
+          <button className='ash-gray text-color font-bold w-full h-fit p-3 key-button rounded' onClick={handleClearButtonClick}> Clear </button>
         </div>
 
       </div>
-      <div className='font-bold pt-2'> Preview: </div>
-      {characterMap[character] === "" ? <div> nuthing </div> : <img src={dataUrl} width={50} height={50} />}
     </div>
   )
 }

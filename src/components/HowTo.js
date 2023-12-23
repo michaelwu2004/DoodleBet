@@ -1,7 +1,6 @@
-import { useState } from 'react'
-import Canvas from "./Canvas";
+import React, { useState } from 'react'
 
-function CanvasMenu({ character, onClose }) {
+function HowTo({ onClose }) {
 
   const [isVisible, setIsVisible] = useState(true);
 
@@ -18,17 +17,22 @@ function CanvasMenu({ character, onClose }) {
   return (
     <div className={`overlay ${isVisible ? 'fade-in' : 'fade-out'} flex items-center justify-center`}>
       <div className='w-fit h-fit p-8 bone flex flex-col rounded'>
-        <div className='flex flex-row space-x-40'>
-          <div className='font-bold text-color'> Editing character mapping for the letter {character}</div>
+        <div className='flex flex-row space-x-28'>
+          <div className='font-bold'> How to use DoodleBet </div>
           <button onClick={handleClose}> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" data-slot="icon" className="w-6 h-6">
             <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
           </svg>
           </button>
         </div>
-        <Canvas character={character} />
+        <ol>
+          <li>Step 1: Right any key on the keyboard</li>
+          <li>Step 2: Create a doodle for the key</li>
+          <li>Step 3: Save it</li>
+          <li>Step 4: Type the letter</li>
+        </ol>
       </div>
     </div>
   )
 }
 
-export default CanvasMenu
+export default HowTo
