@@ -1,70 +1,17 @@
-# Getting Started with Create React App
+# DoodleBet
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+DoodleBet" introduces an innovative approach to communication, intertwining letters and drawings to redefine the conventional way we interact with language. At its core lies a unique concept where each letter of the alphabet corresponds to a personalized drawing, transforming textual communication into a visually engaging experience.
 
-## Available Scripts
+In this project, I've meticulously crafted a visual mapping system where every letter finds its representation in a distinctive and whimsical drawing. By associating each letter with a unique doodle or illustration, DoodleBet revolutionizes how we perceive and engage with written language.
 
-In the project directory, you can run:
+For instance, 'A' might be linked to a delightful apple sketch, 'B' to a vibrant butterfly, and so on. This creative mapping not only breathes life into the alphabet but also infuses it with a sense of creativity and individuality. Users can explore this personalized lexicon, deciphering messages and expressions through a charming visual language rather than traditional text.
 
-### `npm start`
+# Inspiration
+![Project Logo](src/assets/botw.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The Legend of Zelda: Breath of the Wild" introduced a captivating hieroglyph system, a visual language employed within the Sheikah Slate to communicate information, instructions, and lore. This innovative system intrigued me with its fusion of ancient symbols, storytelling, and gameplay mechanics, inspiring my exploration into creating a similar system.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Demonstration 
 
-### `npm test`
+WIP
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
