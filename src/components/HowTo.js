@@ -15,7 +15,7 @@ function HowTo({ onClose }) {
   };
 
   return (
-    <div className={`overlay ${isVisible ? 'fade-in' : 'fade-out'} flex items-center justify-center`}>
+    <div className={` overlay ${isVisible ? 'fade-in' : 'fade-out'} flex items-center justify-center`}>
       <div className='w-fit h-fit p-8 bone flex flex-col rounded'>
         <div className='flex flex-row space-x-28'>
           <div className='font-bold'> How to use DoodleBet </div>

@@ -7,7 +7,6 @@ function Key({ character }) {
   const [openCanvasMenu, setOpenCanvasMenu] = useState(false);
 
   const handleKeyDown = (e) => {
-
     setPressedKey(e.key.toUpperCase());
   }
 
@@ -36,7 +35,7 @@ function Key({ character }) {
   return (
     <div>
       {openCanvasMenu ? <CanvasMenu character={character} onClose={onClose} /> : null}
-      <button onContextMenu={handleRightClick} className={`text-color font-bold bone rounded p-2 w-12 h-12 key-button ${character === pressedKey ? 'pressed' : ''}`}>
+      <button onContextMenu={handleRightClick} className={`text-color font-bold bone rounded p-2 ${character == "SPACE" ? 'w-full px-36' : 'w-12'} h-12 key-button ${(character === pressedKey || (pressedKey === ' ' && 'SPACE' == character)) ? 'pressed' : ''}`}>
         {character}
       </button>
     </div>

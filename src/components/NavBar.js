@@ -20,7 +20,7 @@ function NavBar() {
       </div>
 
       <div>
-        <button className='text-color bone w-fit h-fit p-2 rounded font-bold' onClick={onOpen}>How to use</button>
+        <button className='key-button text-color bone w-fit h-fit p-2 rounded font-bold' onClick={onOpen}>How to use</button>
       </div>
 
       {openHowTo ? <HowTo onClose={onClose} /> : null}

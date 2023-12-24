@@ -11,11 +11,12 @@ function App() {
     initMap[letter] = '';
   }
 
+
   const [characterMap, setCharacterMap] = useState(initMap);
   const [pressedKey, setPressedKey] = useState('');
 
   return (
-    <div className="root h-screen w-screen">
+    <div className="root h-screen w-screen overflow-auto word-box">
       <LetterContext.Provider value={{ characterMap, setCharacterMap, pressedKey, setPressedKey }}>
         <Home />
       </LetterContext.Provider>

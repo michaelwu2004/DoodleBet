@@ -7,8 +7,7 @@ const KeyBoard = () => {
   const keyboard = [firstRow, secondRow, thirdRow]
 
   return (
-    <div>
-
+    <div className='w-full'>
       <div>
         {keyboard.map((row, idx) => (
           <div key={idx} className='flex flex-row space-x-4 m-2 justify-center'>

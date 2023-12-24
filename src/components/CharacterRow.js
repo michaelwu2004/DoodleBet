@@ -12,7 +12,7 @@ function CharacterRow({ isCustom }) {
   useEffect(() => {
     const handleKeyPress = (e) => {
       const key = e.key.toUpperCase();
-      console.log(key)
+
       if (key === 'BACKSPACE') {
         e.preventDefault();
         if (characterSequence.length > 0) {
