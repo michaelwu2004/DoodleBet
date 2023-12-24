@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/DoodleBet/static/css/main.f5b69731.css",
+    "main.js": "/DoodleBet/static/js/main.3f285fa8.js",
+    "static/js/787.4de1bd17.chunk.js": "/DoodleBet/static/js/787.4de1bd17.chunk.js",
+    "index.html": "/DoodleBet/index.html",
+    "main.f5b69731.css.map": "/DoodleBet/static/css/main.f5b69731.css.map",
+    "main.3f285fa8.js.map": "/DoodleBet/static/js/main.3f285fa8.js.map",
+    "787.4de1bd17.chunk.js.map": "/DoodleBet/static/js/787.4de1bd17.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f5b69731.css",
+    "static/js/main.3f285fa8.js"
+  ]
+}
